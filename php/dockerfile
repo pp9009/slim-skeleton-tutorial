@@ -1,0 +1,10 @@
+FROM php:8.1-fpm-alpine
+
+RUN apk update libonig-dev
+
+RUN apk add autoconf gcc g++ make oniguruma-dev
+
+RUN docker-php-ext-install pdo_mysql mysqli mbstring
+
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
