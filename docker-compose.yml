@@ -4,6 +4,7 @@ services:
     slim:
         build: ./php
         command: php -S 0.0.0.0:8080 -t public
+        container_name: slim
         ports:
             - 8080:8080
         volumes:
